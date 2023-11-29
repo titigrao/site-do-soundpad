@@ -1,6 +1,18 @@
-function tocarSomWomen (){
-    document.querySelector('#som_women').play();
-
+function som3x3(idElemento){
+    document.querySelector(idElemento).play();
 }
-document.querySelector('.tecla_women').onclick=tocarSomWomen;
 
+let contador = 0;
+
+const listaDasTeclas = document.querySelectorAll(".tecla")
+
+while (contador < listaDasTeclas.length){
+    const Instrumento = listaDasTeclas[contador].classList
+    console.log(Instrumento[1])
+
+    listaDasTeclas[contador].onclick = function(){
+
+        som3x3(`#som_${Instrumento[1]}`);
+    }
+    contador = contador + 1;
+}
